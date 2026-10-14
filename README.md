@@ -2,6 +2,10 @@
 
 A machine learning project for classifying customer support messages into banking-related intents using the Banking77 dataset.
 
+## Live Demo
+
+**Try the application:** https://customer-support-ai-gkmuxmcdqfjcwk3q6tpidm.streamlit.app/
+
 ## Project Overview
 
 This project demonstrates an end-to-end customer support text classification workflow:
