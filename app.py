@@ -74,7 +74,51 @@ st.markdown(
       div[data-testid="stFileUploader"] { background:white; border:1px dashed #cbd6e9; border-radius:13px; padding:9px; }
       div[data-testid="stDataFrame"] { border:1px solid #e5ebf4; border-radius:12px; overflow:hidden; }
       .footer { text-align:center; padding:24px 0 5px; color:#9aa5b7; font-size:11px; }
-      @media (max-width: 720px) { .hero { padding:22px; } .metric-card { padding:14px; } .metric-value { font-size:23px; } }
+      /* Mobile-first responsive layout refinements */
+      @media (max-width: 768px) {
+        .block-container { padding: 1rem .85rem 2rem !important; max-width: 100% !important; }
+        [data-testid="stHorizontalBlock"] { flex-wrap: wrap !important; gap: .75rem !important; }
+        /* Three- and four-card rows become compact two-column grids on phones. */
+        [data-testid="stHorizontalBlock"]:has(> [data-testid="column"]:nth-child(3)) > [data-testid="column"] {
+          flex: 1 1 calc(50% - .5rem) !important;
+          width: calc(50% - .5rem) !important;
+          min-width: calc(50% - .5rem) !important;
+        }
+        [data-testid="stHorizontalBlock"]:not(:has(> [data-testid="column"]:nth-child(3))) > [data-testid="column"] {
+          flex: 1 1 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+        .hero { padding: 20px 18px; border-radius: 16px; margin-bottom: 16px; }
+        .hero:after { width: 145px; height: 145px; right: -75px; top: -72px; }
+        .hero h1 { font-size: clamp(1.55rem, 6vw, 2rem); overflow-wrap: anywhere; }
+        .hero p { font-size: 13px; line-height: 1.55; }
+        .eyebrow { font-size: 9px; letter-spacing: .1em; }
+        .section-title { font-size: 19px; }
+        .metric-card { padding: 13px; min-height: 0; border-radius: 12px; }
+        .metric-label { font-size: 10px; margin-bottom: 8px; line-height: 1.4; }
+        .metric-value { font-size: clamp(20px, 5.5vw, 24px); overflow-wrap: anywhere; }
+        .metric-foot { font-size: 10px; line-height: 1.4; }
+        .panel { padding: 15px; border-radius: 14px; }
+        .panel-desc { margin-bottom: 12px; }
+        .result-box { padding: 16px; }
+        .result-intent { font-size: clamp(20px, 6vw, 25px); }
+        .step-row { gap: 9px; }
+        .step-desc { overflow-wrap: anywhere; }
+        [data-testid="stDataFrame"], [data-testid="stTable"] { max-width: 100%; overflow-x: auto; }
+        [data-testid="stTextArea"] textarea, [data-testid="stTextInput"] input { font-size: 16px !important; }
+        div.stButton > button, [data-testid="stDownloadButton"] button { min-height: 46px; }
+        [data-testid="stFileUploader"] section { padding: .5rem; }
+        .footer { font-size: 10px; padding: 20px 0 4px; }
+      }
+      @media (max-width: 420px) {
+        .block-container { padding-left: .65rem !important; padding-right: .65rem !important; }
+        .hero { padding: 17px 15px; }
+        .panel { padding: 12px; }
+        .metric-card { padding: 11px; }
+        .metric-value { font-size: 20px; }
+        .intent-chip { max-width: 100%; overflow-wrap: anywhere; }
+      }
     </style>
     """,
     unsafe_allow_html=True,
