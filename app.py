@@ -12,7 +12,7 @@ st.set_page_config(
     page_title="Customer Support AI | Intent Intelligence",
     page_icon="🤖",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 ROOT = Path(__file__).resolve().parent
