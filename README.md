@@ -322,3 +322,11 @@ The completed customer support classification system achieved:
 **84.70% accuracy on 1,000 unseen test records.**
 
 The project demonstrates a complete machine-learning workflow from raw customer-support data to a trained and evaluated intent-classification model.
+
+## Author
+
+**Prince Parvez**
+
+GitHub: https://github.com/princeparvez3
+
+Portfolio: https://princeparvez3.github.io/princeparvez-portfolio/
